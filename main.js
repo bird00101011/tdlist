@@ -21,7 +21,7 @@ if (!gotTheLock) {
 function createWindow() {
   const primaryDisplay = screen.getPrimaryDisplay();
   const { width: screenWidth, height: screenHeight } = primaryDisplay.workAreaSize;
-  const w = 230
+  const w = 200
   const h = 200
 
   win = new BrowserWindow({

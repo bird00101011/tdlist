@@ -34,18 +34,24 @@ body,.html,.app {
 form {
     display: flex;
     margin: 2px 2px 2px 2px;
+    flex-wrap: wrap;
 }
 
 form > input {
     flex-grow: 1;
+    width: 30px;
+    /* box-sizing: border-box; */
+    /* white-space: nowrap; */
 }
 form > button {
     padding: 0;
+    width: auto;
 }
 
 input[type="text"] {
     flex: 1;
     font-size: 0.85rem;
+    max-width: 30px;
 }
 
 /* 列表 */
