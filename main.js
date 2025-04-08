@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, screen } = require('electron');
+const { app, BrowserWindow, ipcMain, screen, dialog } = require('electron');
 const { waitForDebugger } = require('inspector');
 const path = require('path');
 
@@ -47,6 +47,15 @@ function createWindow() {
 
   ipcMain.handle('get-app-path', async () => {
     return app.getAppPath();
+  });
+
+  ipcMain.handle('show_msg', async (event, args) => {
+    return await dialog.showMessageBox({
+      type: 'info',
+      title: '温馨提示',
+      message: '即将超负荷工作',
+      buttons: []
+    });
   });
 }
 
