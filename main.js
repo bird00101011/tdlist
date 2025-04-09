@@ -28,7 +28,7 @@ function createWindow() {
     width: w,
     height: h,
     x: screenWidth - w,                       // ⬅️ 靠右贴边
-    y: Math.floor((screenHeight - h) / 2),
+    y: 0,
     resizable: false,        // ❌ 禁止缩放大小
     maximizable: false,      // ❌ 禁止最大化
     minimizable: false,       // ✅ 可最小化（可选）
