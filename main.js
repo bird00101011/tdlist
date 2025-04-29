@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, screen, dialog } = require('electron');
+const { app, BrowserWindow, ipcMain, screen, dialog, Menu } = require('electron');
 const { waitForDebugger } = require('inspector');
 const path = require('path');
 
@@ -44,7 +44,7 @@ function createWindow() {
 
   const startUrl = process.env.ELECTRON_START_URL || `file://${path.join(__dirname, 'dist/index.html')}`;
   win.loadURL(startUrl);
-
+  Menu.setApplicationMenu(null)
   ipcMain.handle('get-app-path', async () => {
     return app.getAppPath();
   });
